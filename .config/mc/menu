@@ -1,0 +1,108 @@
+shell_patterns=0
++ ! t t
+@       Do something on the current file
+	CMD=%{Enter command}
+	$CMD %f
+
++ t t
+@       Do something on the tagged files
+	set %t; CMD=%{Enter command}
+	while [ -n "$1" ]; do
+	  $CMD "$1"
+	  shift
+	done
+
+= t d
+Z       Compress the current subdirectory (tar.bz2)
+	Pwd=`basename %d /`
+	echo -n "Name of the compressed file (without extension) [$Pwd]: "
+	read tar
+        if [ "$tar"x = x ]; then tar="$Pwd"; fi
+	cd .. && \
+	tar cf - "$Pwd" | bzip2 -f > "$tar.tar.bz2" && \
+	echo "../$tar.tar.bz2 created."
+
+=+ f \.tar\.gz$ | f \.tar\.z$ | f \.tgz$ | f \.tpz$ | f \.tar\.lz$ | f \.tar\.lzma$ | f \.tar\.lz$ | f \.tar\.7z$ | f \.tar\.xz$ | f \.tar\.Z$ | f \.tar\.bz2$ | f \.rar$ | f \.zip$ & t r
+u       Unpack archive
+	unp %f
+
+
++ t t
+U       Unpack archives
+	for i in %t
+        do
+	  unp $i
+        done
+
+=+ f \.m3u$ & t r
++ ! t t
+C       Copy files from playlist
+	~/.local/share/mc/scripts/cpfilesfromplaylist.py %f %D
+
+
++ t t
+C       Copy files from playlists
+	set %t
+	while [ -n "$1" ]; do
+	  ~/.local/share/mc/scripts/cpfilesfromplaylist.py "$1" %D
+	  shift
+	done
+
+
++ ! t t
+M       Play with mplayer
+	mplayer -fs -really-quiet -subfont-text-scale 3 -vf screenshot %f > /dev/null 2>&1 &
+
+
++ t t
+M       Play with mplayer using tagged subtitles file
+	set %t; args=""
+	while [ -n "$1" ]; do
+	  args=$args" "$(echo "\"$1\"" | sed -e 's/^.\{1,\}[.srt|.sub]\"$/-sub &/')
+	  shift
+	done
+	echo mplayer -fs -really-quiet -subfont-text-scale 3 -vf screenshot $args 2>/dev/null | sh &
+
+=+ f  \.mp3$ | f \.wav$ | f\.flac$ | f \.ogg$ | f \.pls$ | f \.m3u$ & t r
++ ! t t
+P       Play with MOC player
+    mocp --server > /dev/null 2>&1
+    mocp --clear
+    mocp --append %f
+    mocp --play
+
++ t t
+P       Play with MOC player
+    mocp --server > /dev/null 2>&1
+    mocp --clear
+	set %t
+	while [ -n "$1" ]; do
+        mocp --append "$1"
+	  shift
+	done
+    mocp --play
+
++ ! t t
+A       Add to MOC player playlist
+    mocp --server > /dev/null 2>&1
+    mocp --append %f
+
++ t t
+A       Add to MOC player playlist
+    mocp --server > /dev/null 2>&1
+	set %t
+	while [ -n "$1" ]; do
+        mocp --append "$1"
+	  shift
+	done
+
+= t d
+N       New file
+	fname=%{Enter File Name:}
+	touch $fname
+
++ ! t t
+E       Edit in new window
+    terminator -mb --command="vim %f" > /dev/null  2>&1 &
+
+
