@@ -28,12 +28,8 @@ Bundle 'gmarik/vundle'
 Bundle 'fisadev/vim-debug.vim'
 " Better file browser
 Bundle 'scrooloose/nerdtree'
-" Code commenter
-Bundle 'scrooloose/nerdcommenter'
 " Class/module browser
 Bundle 'majutsushi/tagbar'
-" Code and files fuzzy finder
-Bundle 'kien/ctrlp.vim'
 " Git integration
 Bundle 'motemen/git-vim'
 " Tab list panel
@@ -42,8 +38,6 @@ Bundle 'kien/tabman.vim'
 Bundle 'Lokaltog/vim-powerline'
 " Terminal Vim with 256 colors colorscheme
 Bundle 'fisadev/fisa-vim-colorscheme'
-" Consoles as buffers
-Bundle 'rosenfeld/conque-term'
 " Pending tasks list
 Bundle 'fisadev/FixedTaskList.vim'
 " Indent text object
@@ -54,7 +48,7 @@ Bundle 'klen/python-mode'
 " Install snipmate dependencies:
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
-Bundle "honza/snipmate-snippets"
+Bundle "honza/vim-snippets"
 " Install snipmate
 Bundle 'garbas/vim-snipmate'
 " Vim-LESS
@@ -72,8 +66,6 @@ Bundle 'IndexedSearch'
 Bundle 'matchit.zip'
 " Gvim colorscheme
 Bundle 'Wombat'
-" Yank history navigation
-Bundle 'YankRing.vim'
 
 
 " JSHint
@@ -131,15 +123,6 @@ imap <C-S-Right> <ESC>:tabn<CR>
 map <C-S-Left> :tabp<CR>
 imap <C-S-Left> <ESC>:tabp<CR>
 
-" Navigate windows with Control+arrows
-map <C-Right> <c-w>l
-map <C-Left> <c-w>h
-map <C-Up> <c-w>k
-map <C-Down> <c-w>j
-imap <C-Right> <ESC><c-w>l
-imap <C-Left> <ESC><c-w>h
-imap <C-Up> <ESC><c-w>k
-imap <C-Down> <ESC><c-w>j
 
 " automatically close autocompletion window
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
@@ -200,42 +183,9 @@ map <F10> :Dbg watch<CR>
 map <F11> :Dbg down<CR>
 map <F12> :Dbg up<CR>
 
-" CtrlP (new fuzzy finder)
-let g:ctrlp_map = ',e'
-nmap ,g :CtrlPBufTag<CR>
-nmap ,G :CtrlPBufTagAll<CR>
-nmap ,f :CtrlPLine<CR>
-nmap ,m :CtrlPMRUFiles<CR>
-" to be able to call CtrlP with default search text
-function! CtrlPWithSearchText(search_text, ctrlp_command_end)
-    execute ':CtrlP' . a:ctrlp_command_end
-    call feedkeys(a:search_text)
-endfunction
-" CtrlP with default text
-nmap ,wg :call CtrlPWithSearchText(expand('<cword>'), 'BufTag')<CR>
-nmap ,wG :call CtrlPWithSearchText(expand('<cword>'), 'BufTagAll')<CR>
-nmap ,wf :call CtrlPWithSearchText(expand('<cword>'), 'Line')<CR>
-nmap ,we :call CtrlPWithSearchText(expand('<cword>'), '')<CR>
-nmap ,pe :call CtrlPWithSearchText(expand('<cfile>'), '')<CR>
-nmap ,wm :call CtrlPWithSearchText(expand('<cword>'), 'MRUFiles')<CR>
-" Don't change working directory
-let g:ctrlp_working_path_mode = 0
-" Ignore files on fuzzy finder
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.git|\.hg|\.svn)$',
-  \ 'file': '\.pyc$\|\.pyo$',
-  \ }
 
 " Ignore files on NERDTree
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
-
-" simple recursive grep
-command! -nargs=1 RecurGrep lvimgrep /<args>/gj ./**/*.* | lopen | set nowrap
-command! -nargs=1 RecurGrepFast silent exec 'lgrep! <q-args> ./**/*.*' | lopen
-nmap ,R :RecurGrep 
-nmap ,r :RecurGrepFast 
-nmap ,wR :RecurGrep <cword><CR>
-nmap ,wr :RecurGrepFast <cword><CR>
 
 " python-mode settings
 " don't show lint result every time we save a file
@@ -285,8 +235,6 @@ set scrolloff=3
 " (complete only the common part, list the options that match)
 set wildmode=list:longest
 
-" Fix to let ESC work as espected with Autoclose plugin
-let g:AutoClosePumvisible = {"ENTER": "\<C-Y>", "ESC": "\<ESC>"}
 
 " to use fancy symbols for powerline, uncomment the following line and use a
 " patched font (more info on the README.rst)
@@ -338,7 +286,7 @@ function SetWrap()
 endfunction
 
 
-" au! BufRead,BufNewFile *.txt call SetWrap()
+au! BufRead,BufNewFile *.txt call SetWrap()
 
 " preserve selection after block shifting                 
 vnoremap < <gv
@@ -353,7 +301,7 @@ vmap <C-w> <esc>:w<cr>
 imap <C-w> <esc>:w<cr>
 
 " Control+q to quit
-silent !stty -ixon > /dev/null 2>/dev/null
+"silent !stty -ixon > /dev/null 2>/dev/null
 nmap <C-q> :q<cr>
 vmap <C-q> <esc>:q<cr>
 imap <C-q> <esc>:q<cr>
@@ -377,3 +325,5 @@ set smartcase
 
 " Disable automatic comment insertion
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+
