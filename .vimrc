@@ -301,7 +301,7 @@ vmap <C-w> <esc>:w<cr>
 imap <C-w> <esc>:w<cr>
 
 " Control+q to quit
-"silent !stty -ixon > /dev/null 2>/dev/null
+silent !stty -ixon > /dev/null 2>/dev/null
 nmap <C-q> :q<cr>
 vmap <C-q> <esc>:q<cr>
 imap <C-q> <esc>:q<cr>

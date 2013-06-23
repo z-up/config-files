@@ -201,11 +201,6 @@ export PATH=~/sw/rebar:$PATH
 # URBI
 export PATH=~/sw/urbi-sdk-2.7.6-linux-x86-gcc4/bin:$PATH
 
-
-# JSHint
-#export PATH=~/sw/node_modules/jshint/bin/:$PATH
-
-
 # My Scripts
 export PATH=~/sw/mine:$PATH
 
