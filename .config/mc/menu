@@ -37,14 +37,14 @@ U       Unpack archives
 =+ f \.m3u$ & t r
 + ! t t
 C       Copy files from playlist
-	~/.local/share/mc/scripts/cpfilesfromplaylist.py %f %D
+	 copyFromPlaylist %f %D
 
 
 + t t
 C       Copy files from playlists
 	set %t
 	while [ -n "$1" ]; do
-	  ~/.local/share/mc/scripts/cpfilesfromplaylist.py "$1" %D
+	  copyFromPlaylist "$1" %D
 	  shift
 	done
 

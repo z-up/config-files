@@ -75,8 +75,9 @@ Bundle 'Wombat'
 " Yank history navigation
 Bundle 'YankRing.vim'
 
+
 " JSHint
-Bundle 'walm/jshint.vim'
+"Bundle 'walm/jshint.vim'
 
 " Installing plugins the first time
 if iCanHazVundle == 0
@@ -337,7 +338,7 @@ function SetWrap()
 endfunction
 
 
-au! BufRead,BufNewFile *.txt call SetWrap()
+" au! BufRead,BufNewFile *.txt call SetWrap()
 
 " preserve selection after block shifting                 
 vnoremap < <gv
@@ -365,6 +366,7 @@ au! BufRead,BufNewFile *.py set nonu
 " Disable line numbering int the TabMan window 
 let g:tabman_number = 0
 
+autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 " SnipMate snippets for Django
 autocmd FileType python set ft=python.django " For SnipMate

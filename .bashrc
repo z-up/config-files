@@ -144,22 +144,17 @@ alias wget="wget -c -t 0"
 alias wget-site="wget -rEkp -np -c -t 0"
 alias diff="colordiff"
 
-alias md="mkdir"
-
 # Navigation shortcuts
 alias ..='cd ..'
 alias ...='cd ../..'
-alias dox='cd ~/Documents'
-alias dl='cd ~/Downloads'
 
 alias pysmtpd='python -m smtpd -n -c DebuggingServer localhost:1025'
 alias find_duplicates='/home/sanya/dev/Python/find_duplicates.py'
 alias pydict='/home/sanya/dev/Python/pydict.py'
-alias cperms='/home/sanya/dev/Python/cperms.py'
 alias timidity_server='timidity -iA -B2,8 -Os1l -s 44100'
 
 export EDITOR=/usr/bin/vim
-export MANPAGER=/usr/bin/most
+#export MANPAGER=/usr/bin/most
 
 
 extract () {
@@ -196,9 +191,12 @@ export PATH=~/sw/hp-2013.2.0.0/bin:$PATH
 export PATH=~/.cabal/bin:$PATH
 
 # Erlang
-export PATH=~/sw/otp-r16b/bin/:$PATH
-export ERL_LIBS=~/sw/otp-r16b/lib/
+export PATH=~/sw/otp-r16b/bin:$PATH
+export ERL_LIBS=~/sw/otp-r16b/lib
 export ERL_TOP=~/sw/otp-r16b/lib/erlang
+
+# Rebar
+export PATH=~/sw/rebar:$PATH
 
 # URBI
 export PATH=~/sw/urbi-sdk-2.7.6-linux-x86-gcc4/bin:$PATH
@@ -207,6 +205,9 @@ export PATH=~/sw/urbi-sdk-2.7.6-linux-x86-gcc4/bin:$PATH
 # JSHint
 #export PATH=~/sw/node_modules/jshint/bin/:$PATH
 
+
+# My Scripts
+export PATH=~/sw/mine:$PATH
 
 # Activating virtual environment
 pathmatch=`pwd | grep '/home/sanya/dev/Django/organizer_ve'`
@@ -219,6 +220,6 @@ then
     alias syncdb='python manage.py syncdb'
     alias shell='python manage.py shell'
     alias test_notes='python manage.py test notes'
-    alias erd='python manage.py graph_models gtd > gtd.dot && dot gtd.dot -Tpng -o gtd.png'
+    alias erd='python manage.py graph_models notes > notes.dot && dot notes.dot -Tpng -o notes.png'
 fi
 

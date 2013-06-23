@@ -1,26 +1,24 @@
 #!/usr/bin/env python
+"""Usage cpfilesfromplaylist <playlist_file> <directory_to_copy_files_to>
+"""
 
-import os, sys, shutil
-
-def main():
-    args = sys.argv[1:]
-    if len(args) != 2:
-        return False
-    playlist_filename = args[0]
-    dest_folder_name = args[1]
-    if os.path.isfile(playlist_filename) and \
-                    playlist_filename.lower().endswith(".m3u") and \
-                    os.path.isdir(dest_folder_name):
-        f = open(playlist_filename)
-        lines = f.readlines()
-        f.close()
-        for s in [l for l in lines if not l.strip().startswith("#")]:
-            song = s.strip()
-            if os.path.isfile(song):
-                print("copying %s\n" % song)
-                shutil.copy2(song, dest_folder_name)
+import os, sys, shutil, string
 
 
 if __name__ == '__main__':
-    main()
+    args = sys.argv[1:]
+    if len(args) != 2:
+        print(__doc__)
+        sys.exit(1)
+
+    [filename, dirname] = args
+    if not (os.path.isfile(filename) and os.path.isdir(dirname)):
+        print(__doc__)
+        sys.exit(1)
+
+    with open(filename) as f:
+        for song_file in map(string.strip, f.readlines()):
+            if os.path.isfile(song_file):
+                print("copying %s" % song_file)
+                shutil.copy2(song_file, dirname)
 
