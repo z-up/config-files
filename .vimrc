@@ -295,16 +295,28 @@ vnoremap > >gv
 " Put the new window below the current
 set splitbelow
 
-" Save file with Control+w
-nmap <C-w> :w<cr>
-vmap <C-w> <esc>:w<cr>
-imap <C-w> <esc>:w<cr>
+" Save file with Control+s
+nmap <C-s> :w<cr>
+vmap <C-s> <esc>:w<cr>
+imap <C-s> <esc>:w<cr>
 
 " Control+q to quit
 silent !stty -ixon > /dev/null 2>/dev/null
 nmap <C-q> :q<cr>
 vmap <C-q> <esc>:q<cr>
 imap <C-q> <esc>:q<cr>
+
+" Navigate windows with Control+arrows
+map <C-Right> <c-w>l
+map <C-Left> <c-w>h
+map <C-Up> <c-w>k
+map <C-Down> <c-w>j
+imap <C-Right> <ESC><c-w>l
+imap <C-Left> <ESC><c-w>h
+imap <C-Up> <ESC><c-w>k
+imap <C-Down> <ESC><c-w>j
+
+nnoremap gf <c-w>gf
 
 " Disable line numbers in Python source files
 au! BufRead,BufNewFile *.py set nonu
