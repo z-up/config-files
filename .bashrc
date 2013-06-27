@@ -152,6 +152,8 @@ alias pysmtpd='python -m smtpd -n -c DebuggingServer localhost:1025'
 alias find_duplicates='/home/sanya/dev/Python/find_duplicates.py'
 alias pydict='/home/sanya/dev/Python/pydict.py'
 alias timidity_server='timidity -iA -B2,8 -Os1l -s 44100'
+alias sml='rlwrap sml'
+
 
 export EDITOR=/usr/bin/vim
 #export MANPAGER=/usr/bin/most
