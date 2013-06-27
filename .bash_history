@@ -5,5 +5,6 @@ find -iname "<pattern>" -exec cp {} </destination/folder> \;
 rename -n -- 's///g' *
 for f in `ls IMG*`; do mv $f `echo $f | tr '[:upper:]' '[:lower:]'`; done
 git status
+git commit -a -m "update"
 git commit -m "update"
 git push origin master
