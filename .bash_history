@@ -10,3 +10,4 @@ git commit -m "update"
 git push origin master
 lfe -s hello start -s erlang halt
 rlwrap sbcl
+git reset --hard

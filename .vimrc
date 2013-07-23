@@ -362,3 +362,8 @@ set smartcase
 " Disable automatic comment insertion
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+
+" Fixing some fisadev-colorscheme colors 
+hi VertSplit guifg=#444444 guibg=#303030 guisp=#303030 gui=NONE ctermfg=white ctermbg=NONE cterm=NONE
+hi NonText guifg=#808080 guibg=#202020 guisp=#202020 gui=NONE ctermfg=8 ctermbg=NONE cterm=NONE
+hi SignColumn guifg=#424242 guibg=#202020 guisp=#202020 gui=NONE ctermfg=238 ctermbg=NONE cterm=NONE
