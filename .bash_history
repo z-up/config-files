@@ -8,3 +8,5 @@ git status
 git commit -a -m "update"
 git commit -m "update"
 git push origin master
+lfe -s hello start -s erlang halt
+rlwrap sbcl

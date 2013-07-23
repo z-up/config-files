@@ -26,31 +26,43 @@ Bundle 'gmarik/vundle'
 
 " Python and PHP Debugger
 Bundle 'fisadev/vim-debug.vim'
+
 " Better file browser
 Bundle 'scrooloose/nerdtree'
+
 " Class/module browser
 Bundle 'majutsushi/tagbar'
+
 " Git integration
 Bundle 'motemen/git-vim'
+
 " Tab list panel
 Bundle 'kien/tabman.vim'
+
 " Powerline
 Bundle 'Lokaltog/vim-powerline'
+
 " Terminal Vim with 256 colors colorscheme
 Bundle 'fisadev/fisa-vim-colorscheme'
+
 " Pending tasks list
 Bundle 'fisadev/FixedTaskList.vim'
+
 " Indent text object
 Bundle 'michaeljsmith/vim-indent-object'
+
 " Python mode (indentation, doc, refactor, lints, code checking, motion and
 " operators, highlighting, run and ipdb breakpoints)
 Bundle 'klen/python-mode'
+
 " Install snipmate dependencies:
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "honza/vim-snippets"
+
 " Install snipmate
 Bundle 'garbas/vim-snipmate'
+
 " Vim-LESS
 Bundle 'groenewege/vim-less'
 
@@ -58,18 +70,29 @@ Bundle 'groenewege/vim-less'
 
 " Autocompletion
 Bundle 'AutoComplPop'
+
 " Python code checker
 Bundle 'pyflakes.vim'
+
 " Search results counter
 Bundle 'IndexedSearch'
+
 " XML/HTML tags navigation
 Bundle 'matchit.zip'
+
 " Gvim colorscheme
 Bundle 'Wombat'
 
 
 " JSHint
 "Bundle 'walm/jshint.vim'
+
+" VimErl
+Bundle 'jimenezrick/vimerl'
+
+" Lisp Flavoured Erlang
+Bundle 'lfe/vim-lfe'
+
 
 " Installing plugins the first time
 if iCanHazVundle == 0
@@ -331,11 +354,11 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 " SnipMate snippets for Django
 autocmd FileType python set ft=python.django " For SnipMate
 autocmd FileType html set ft=htmldjango.html " For SnipMate
+au BufRead,BufNewFile *.dtl set filetype=htmldjango
 
 " Case-sensitive if search contains an uppercase character
 set smartcase
 
 " Disable automatic comment insertion
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
 

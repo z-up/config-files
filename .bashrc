@@ -184,8 +184,8 @@ extract () {
 #export PATH=~/sw/pypy-2.0-beta2/bin:$PATH
 
 # GAE
-#alias gae_dev_appserver="/home/sanya/sw/gae-1.7.7/dev_appserver.py"
-#alias gae_update="/home/sanya/sw/gae-1.7.7/appcfg.py update"
+alias gae_dev_appserver="/home/sanya/sw/gae-1.8.1/dev_appserver.py"
+alias gae_update="/home/sanya/sw/gae-1.8.1/appcfg.py update"
 
 # Haskell
 export PATH=~/sw/ghc-7.6.3/bin:$PATH
@@ -193,15 +193,22 @@ export PATH=~/sw/hp-2013.2.0.0/bin:$PATH
 export PATH=~/.cabal/bin:$PATH
 
 # Erlang
-export PATH=~/sw/otp-r16b/bin:$PATH
-export ERL_LIBS=~/sw/otp-r16b/lib
-export ERL_TOP=~/sw/otp-r16b/lib/erlang
+export PATH=~/sw/otp-r16b01/bin:$PATH
+export ERL_LIBS=~/sw/otp-r16b01/lib
+export ERL_TOP=~/sw/otp-r16b01/lib/erlang 
+
+
+# Lisp Flavoured Erlang
+export PATH=~/sw/lfe/bin:$PATH
 
 # Rebar
 export PATH=~/sw/rebar:$PATH
 
 # URBI
 export PATH=~/sw/urbi-sdk-2.7.6-linux-x86-gcc4/bin:$PATH
+
+# Grace
+export PATH=~/sw/Grace:$PATH
 
 # My Scripts
 export PATH=~/sw/mine:$PATH
@@ -217,6 +224,21 @@ then
     alias syncdb='python manage.py syncdb'
     alias shell='python manage.py shell'
     alias test_notes='python manage.py test notes'
+    alias erd='python manage.py graph_models notes > notes.dot && dot notes.dot -Tpng -o notes.png'
+fi
+
+
+pathmatch=`pwd | grep '/home/sanya/dev/Django/bazooka_ve'`
+matchlen=${#pathmatch}
+if [[ $matchlen -gt 0 ]]
+then
+    echo "Activating virtual environment"
+    source /home/sanya/dev/Django/bazooka_ve/bin/activate
+    export IPYTHONDIR=/home/sanya/dev/Django/bazooka_ve/.ipython
+    alias runserver='python manage.py runserver'
+    alias syncdb='python manage.py syncdb'
+    alias shell='python manage.py shell'
+    alias test_bazooka='python manage.py test notes'
     alias erd='python manage.py graph_models notes > notes.dot && dot notes.dot -Tpng -o notes.png'
 fi
 

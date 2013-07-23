@@ -556,12 +556,20 @@ shell/.abw
 	Open=(abiword %f &)
 
 # Microsoft Word Document
+#regex/\.([Dd][oO][cCtT]|[Ww][rR][iI])$
+#	Open=(libreoffice %f >/dev/null 2>&1 &)
+#	View=%view{ascii} antiword -t %f || catdoc -w %f || word2x -f text %f - || strings %f
+#type/^Microsoft\ Word
+#	Open=(libreoffice %f >/dev/null 2>&1 &)
+#	View=%view{ascii} antiword -t %f || catdoc -w %f || word2x -f text %f - || strings %f
+
+# Microsoft Word Document
 regex/\.([Dd][oO][cCtT]|[Ww][rR][iI])$
-	Open=(libreoffice %f >/dev/null 2>&1 &)
-	View=%view{ascii} antiword -t %f || catdoc -w %f || word2x -f text %f - || strings %f
+	Open=(abiword %f >/dev/null 2>&1 &)
+	view=(abiword %f >/dev/null 2>&1 &)
 type/^Microsoft\ Word
-	Open=(libreoffice %f >/dev/null 2>&1 &)
-	View=%view{ascii} antiword -t %f || catdoc -w %f || word2x -f text %f - || strings %f
+	Open=(abiword %f >/dev/null 2>&1 &)
+	View=(abiword %f >/dev/null 2>&1 &)
 
 # RTF document
 regex/\.([rR][tT][fF])$
