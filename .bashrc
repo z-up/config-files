@@ -201,6 +201,9 @@ export ERL_TOP=~/sw/otp-r16b01/lib/erlang
 # Lisp Flavoured Erlang
 export PATH=~/sw/lfe/bin:$PATH
 
+# Elixir
+export PATH=~/sw/elixir-0.10.2/bin:$PATH
+
 # Rebar
 export PATH=~/sw/rebar:$PATH
 
