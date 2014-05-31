@@ -522,7 +522,8 @@ include/video
 
 # Postscript
 type/^PostScript
-	Open=(gv %f &)
+	Open=(evince %f > /dev/null 2>&1 &)
+	#Open=(gv %f &)
 	View=%view{ascii} ps2ascii %f
 
 # PDF

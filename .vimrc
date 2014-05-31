@@ -53,7 +53,7 @@ Bundle 'michaeljsmith/vim-indent-object'
 
 " Python mode (indentation, doc, refactor, lints, code checking, motion and
 " operators, highlighting, run and ipdb breakpoints)
-Bundle 'klen/python-mode'
+" Bundle 'klen/python-mode'
 
 " Install snipmate dependencies:
 Bundle "MarcWeber/vim-addon-mw-utils"
@@ -91,7 +91,16 @@ Bundle 'Wombat'
 Bundle 'jimenezrick/vimerl'
 
 " Lisp Flavoured Erlang
-Bundle 'lfe/vim-lfe'
+"Bundle 'lfe/vim-lfe'
+
+" Pydiction
+Bundle 'rkulla/pydiction'
+
+" jedi-vim autocompletion
+Bundle 'davidhalter/jedi-vim'
+
+" Supertab
+" Bundle 'ervandew/supertab'
 
 
 " Installing plugins the first time
@@ -319,9 +328,9 @@ vnoremap > >gv
 set splitbelow
 
 " Save file with Control+s
-nmap <C-s> :w<cr>
-vmap <C-s> <esc>:w<cr>
-imap <C-s> <esc>:w<cr>
+nnoremap <C-s> :w<cr>
+vnoremap <C-s> <esc>:w<cr>
+inoremap <C-s> <esc>:w<cr>
 
 " Control+q to quit
 silent !stty -ixon > /dev/null 2>/dev/null
@@ -367,3 +376,24 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 hi VertSplit guifg=#444444 guibg=#303030 guisp=#303030 gui=NONE ctermfg=white ctermbg=NONE cterm=NONE
 hi NonText guifg=#808080 guibg=#202020 guisp=#202020 gui=NONE ctermfg=8 ctermbg=NONE cterm=NONE
 hi SignColumn guifg=#424242 guibg=#202020 guisp=#202020 gui=NONE ctermfg=238 ctermbg=NONE cterm=NONE
+
+
+let g:pydiction_location='/home/sanya/.vim/bundle/pydiction/complete-dict'
+
+
+" Remap snipmate's trigger key from tab to <C-J>
+"imap <C-t> <Plug>snipMateNextOrTrigger
+"smap <C-t> <Plug>snipMateNextOrTrigger
+
+
+
+nnoremap <C-n> :tabnew<cr>
+inoremap <C-n> <esc>:tabnew<cr>
+vnoremap <C-n> <esc>:tabnew<cr>
+
+
+nnoremap <C-o> :tabnew 
+inoremap <C-o> <esc>:tabnew 
+vnoremap <C-o> <esc>:tabnew 
+
+

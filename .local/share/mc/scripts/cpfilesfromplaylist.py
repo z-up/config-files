@@ -12,7 +12,7 @@ if __name__ == '__main__':
         sys.exit(1)
 
     [filename, dirname] = args
-    if not (os.path.isfile(filename) and os.path.isdir(dirname)):
+    if not (os.path.isfile(filename) or os.path.isdir(dirname)):
         print(__doc__)
         sys.exit(1)
 
