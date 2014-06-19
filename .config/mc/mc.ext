@@ -618,6 +618,10 @@ regex/\.([fF][bB]2)$
 regex/\.([eE][pP][uU][bB])$
     Open=FBReader %f > /dev/null 2>&1 &
 
+# mobi
+regex/\.([mM][oO][bB][iI])$
+    Open=FBReader %f > /dev/null 2>&1 &
+
 ### Miscellaneous ###
 
 # Makefile

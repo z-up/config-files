@@ -34,7 +34,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'majutsushi/tagbar'
 
 " Git integration
-Bundle 'motemen/git-vim'
+" Bundle 'motemen/git-vim'
 
 " Tab list panel
 Bundle 'kien/tabman.vim'
@@ -46,10 +46,10 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'fisadev/fisa-vim-colorscheme'
 
 " Pending tasks list
-Bundle 'fisadev/FixedTaskList.vim'
+" Bundle 'fisadev/FixedTaskList.vim'
 
 " Indent text object
-Bundle 'michaeljsmith/vim-indent-object'
+" Bundle 'michaeljsmith/vim-indent-object'
 
 " Python mode (indentation, doc, refactor, lints, code checking, motion and
 " operators, highlighting, run and ipdb breakpoints)
@@ -64,7 +64,7 @@ Bundle "honza/vim-snippets"
 Bundle 'garbas/vim-snipmate'
 
 " Vim-LESS
-Bundle 'groenewege/vim-less'
+" Bundle 'groenewege/vim-less'
 
 " Bundles from vim-scripts repos
 

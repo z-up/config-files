@@ -194,9 +194,9 @@ extract () {
 export PATH=~/.cabal/bin:$PATH
 
 # Erlang
-#export PATH=~/sw/otp-r16b03/bin:$PATH
-#export ERL_LIBS=~/sw/otp-r16b03/lib
-#export ERL_TOP=~/sw/otp-r16b03/lib/erlang 
+export PATH=~/sw/otp-17.0/bin:$PATH
+export ERL_LIBS=~/sw/otp-17.0/lib
+export ERL_TOP=~/sw/otp-17.0/lib/erlang 
 
 # Rebar
 #export PATH=~/sw/rebar:$PATH

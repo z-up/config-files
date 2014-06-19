@@ -13,12 +13,15 @@ git push origin master
 git reset --hard
 killall -s KILL mplayer
 rebar get-deps compile
-ls -1 | grep -i
+ls -1 | grep -i 
+ls -1 | wc -l
 youtube-dl -citw ytuser:TheAlphalete
 df -h
 du -sh
-ps aux | grep 
+ps aux | grep -i 
 ffmpeg -i CDImage.ape -f wav - | lame - CDImage.mp3
 ffmpeg -i CDImage.ape CDImage.flac
 cuebreakpoints CDImage.cue | shnsplit -o flac CDImage.flac
 grep '<dt id="' *html | sed -e "s/^.\+html:<dt id=\"//; s/\">$//" | sort > blender_pydiction.txt
+ipython3
+python3 setup.py build_ext --inplace
