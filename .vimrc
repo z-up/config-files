@@ -386,12 +386,6 @@ let g:pydiction_location='/home/sanya/.vim/bundle/pydiction/complete-dict'
 "smap <C-t> <Plug>snipMateNextOrTrigger
 
 
-
-nnoremap <C-n> :tabnew<cr>
-inoremap <C-n> <esc>:tabnew<cr>
-vnoremap <C-n> <esc>:tabnew<cr>
-
-
 nnoremap <C-o> :tabnew 
 inoremap <C-o> <esc>:tabnew 
 vnoremap <C-o> <esc>:tabnew 

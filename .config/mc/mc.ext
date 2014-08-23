@@ -512,6 +512,10 @@ regex/\.([mM]4[vV])$
 	#Open=(realplay %f >/dev/null 2>&1 &)
     Include=video
 
+regex/\.([rR][mM][vV][bB])$
+	#Open=(realplay %f >/dev/null 2>&1 &)
+    Include=video
+
 include/video
 	Open=(mplayer -fs -really-quiet -subfont-text-scale 3 -vf screenshot %f >/dev/null 2>&1 &)
 	#Open=(gtv %f >/dev/null 2>&1 &)
