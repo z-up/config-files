@@ -71,8 +71,8 @@ Bundle 'garbas/vim-snipmate'
 " Autocompletion
 Bundle 'AutoComplPop'
 
-" Python code checker
-Bundle 'pyflakes.vim'
+" Python code checker (does not seem to work with Python3)
+" Bundle 'pyflakes.vim'
 
 " Search results counter
 Bundle 'IndexedSearch'
@@ -102,6 +102,9 @@ Bundle 'davidhalter/jedi-vim'
 " Supertab
 " Bundle 'ervandew/supertab'
 
+" Elixir
+Bundle 'elixir-lang/vim-elixir'
+Bundle 'slashmili/alchemist.vim'
 
 " Installing plugins the first time
 if iCanHazVundle == 0
