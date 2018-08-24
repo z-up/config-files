@@ -106,6 +106,12 @@ Bundle 'davidhalter/jedi-vim'
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'slashmili/alchemist.vim'
 
+" cpp
+Bundle 'Valloric/YouCompleteMe'
+
+" gnupg
+" Bundle 'jamessan/vim-gnupg'
+
 " Installing plugins the first time
 if iCanHazVundle == 0
     echo "Installing Bundles, please ignore key map error messages"
@@ -127,6 +133,7 @@ set shiftwidth=4
 "autocmd FileType html setlocal shiftwidth=2 tabstop=2
 "autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2
 autocmd FileType make setlocal noexpandtab
+autocmd FileType cpp setlocal noexpandtab " LMMS coding style
 
 " always show status bar
 set ls=2
@@ -379,6 +386,9 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 hi VertSplit guifg=#444444 guibg=#303030 guisp=#303030 gui=NONE ctermfg=white ctermbg=NONE cterm=NONE
 hi NonText guifg=#808080 guibg=#202020 guisp=#202020 gui=NONE ctermfg=8 ctermbg=NONE cterm=NONE
 hi SignColumn guifg=#424242 guibg=#202020 guisp=#202020 gui=NONE ctermfg=238 ctermbg=NONE cterm=NONE
+hi TabLine ctermfg=DarkGray ctermbg=Black
+hi TabLineSel ctermfg=Black ctermbg=White
+hi TabLineFill ctermbg=Black ctermfg=Black
 
 
 let g:pydiction_location='/home/sanya/.vim/bundle/pydiction/complete-dict'
